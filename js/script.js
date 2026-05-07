@@ -4,6 +4,7 @@ const SITE = Object.freeze({
   name: "AZUL Location",
   whatsappNumber: "213550400665",
   contactEmail: "hb.location.auto@gmail.com",
+  pendingWhatsAppStorageKey: "azulLocationPendingWhatsApp",
   defaultWhatsAppMessage:
     "Bonjour AZUL Location, je souhaite avoir des informations sur une location de voiture.",
 });
@@ -208,6 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroShowcaseCarousel();
   initVehicleGallery();
   initFloatingWhatsApp();
+  initPostSubmitWhatsApp();
 });
 
 function initMenu() {
@@ -318,7 +320,7 @@ function initReservationForm() {
       "dates_lisibles",
       `${formatDate(data.dateDebut)} au ${formatDate(data.dateFin)}`,
     );
-    openWhatsApp(message);
+    storePendingWhatsApp(message);
     form.submit();
   });
 }
@@ -535,7 +537,7 @@ function initContactForm() {
       "_subject",
       `Contact AZUL Location - ${valueOf("contactSujet")}`,
     );
-    openWhatsApp(message);
+    storePendingWhatsApp(message);
     form.submit();
   });
   whatsAppButton?.addEventListener("click", () => {
@@ -777,13 +779,30 @@ function initFloatingWhatsApp() {
   if (document.querySelector(".floating-whatsapp")) return;
   const link = document.createElement("a");
   link.className = "floating-whatsapp";
-  link.href = `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(SITE.defaultWhatsAppMessage)}`;
+  link.href = getWhatsAppUrl(SITE.defaultWhatsAppMessage);
   link.target = "_blank";
   link.rel = "noopener noreferrer";
   link.setAttribute("aria-label", "Contacter AZUL Location sur WhatsApp");
   link.innerHTML =
     '<img src="images/whatsapp-icon.png" alt="" width="26" height="26" decoding="async">';
   document.body.appendChild(link);
+}
+
+function initPostSubmitWhatsApp() {
+  if (document.body.dataset.page !== "merci") return;
+  const message = readPendingWhatsApp();
+  if (!message) return;
+
+  const url = getWhatsAppUrl(message);
+  const button = document.getElementById("postSubmitWhatsAppButton");
+  if (button) {
+    button.href = url;
+    button.hidden = false;
+  }
+
+  window.setTimeout(() => {
+    window.location.href = url;
+  }, 900);
 }
 
 function valueOf(id) {
@@ -817,12 +836,27 @@ function escapeHtml(value) {
       })[char],
   );
 }
+function getWhatsAppUrl(message) {
+  return `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+function storePendingWhatsApp(message) {
+  try {
+    sessionStorage.setItem(SITE.pendingWhatsAppStorageKey, message);
+  } catch {
+    // If storage is blocked, the email still goes through FormSubmit.
+  }
+}
+function readPendingWhatsApp() {
+  try {
+    const message = sessionStorage.getItem(SITE.pendingWhatsAppStorageKey);
+    sessionStorage.removeItem(SITE.pendingWhatsAppStorageKey);
+    return message;
+  } catch {
+    return "";
+  }
+}
 function openWhatsApp(message) {
-  window.open(
-    `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(message)}`,
-    "_blank",
-    "noopener,noreferrer",
-  );
+  window.open(getWhatsAppUrl(message), "_blank", "noopener,noreferrer");
 }
 function clearErrors(scope = document) {
   scope.querySelectorAll(".error-message").forEach((el) => el.remove());
