@@ -114,8 +114,28 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  font-size: 1.4rem;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+}
+.menu-toggle span {
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: #111;
+  transition: var(--transition);
+}
+body.nav-open .menu-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+body.nav-open .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+body.nav-open .menu-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 .hero-section {
   position: relative;
@@ -1210,7 +1230,7 @@ a {
     gap: 22px;
   }
   .socials {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, 44px);
   }
   .floating-whatsapp {
     right: 14px;

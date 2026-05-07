@@ -221,7 +221,6 @@ function initMenu() {
       "aria-label",
       opened ? "Fermer le menu" : "Ouvrir le menu",
     );
-    toggle.textContent = opened ? "×" : "☰";
   };
 
   toggle.addEventListener("click", () => {
@@ -319,7 +318,6 @@ function initReservationForm() {
       "dates_lisibles",
       `${formatDate(data.dateDebut)} au ${formatDate(data.dateFin)}`,
     );
-    setHiddenValue(form, "message_whatsapp_prepare", message);
     openWhatsApp(message);
     form.submit();
   });
@@ -667,8 +665,6 @@ function initHeroShowcaseCarousel() {
     const preload = new Image();
     preload.src = slide.image;
   });
-
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   let currentIndex = 0;
   window.setInterval(() => {
