@@ -1,219 +1,503 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HB Location - Accueil</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AZUL Location | Location de voitures en Algérie</title>
+    <meta
+      name="description"
+      content="AZUL Location propose la location de voitures en Algérie : véhicules propres, tarifs transparents, réservation rapide et livraison possible."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://azul-location.com/" />
+    <meta property="og:site_name" content="AZUL Location" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta
+      property="og:title"
+      content="AZUL Location | Location de voitures en Algérie"
+    />
+    <meta
+      property="og:description"
+      content="Réservez un véhicule fiable en Algérie avec AZUL Location. Service professionnel, rapide et rassurant."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://azul-location.com/" />
+    <meta
+      property="og:image"
+      content="https://azul-location.com/images/logo.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="AZUL Location - location de voitures en Algérie"
+    />
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AutoRental",
+        "name": "AZUL Location",
+        "image": "https://azul-location.com/images/logo.png",
+        "url": "https://azul-location.com/",
+        "telephone": "+213550400665",
+        "email": "hb.location.auto@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "RN 12 Tizi-Bouchène",
+          "addressLocality": "Azazga",
+          "addressCountry": "DZ"
+        },
+        "areaServed": ["Azazga", "Tizi Ouzou", "Alger", "Béjaïa"]
+      }
+    </script>
     <script src="js/script.js" defer></script>
+  </head>
+  <body data-page="home">
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Accueil AZUL Location">
+          <img
+            src="images/logo.png"
+            alt="Logo AZUL Location"
+            class="brand-logo"
+            width="50"
+            height="50"
+            decoding="async"
+          />
+          <span class="brand-name">AZUL Location</span>
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mainNav"
+        >
+          ?
+        </button>
+        <nav id="mainNav" class="main-nav" aria-label="Navigation principale">
+          <a href="index.html" class="active" aria-current="page">Accueil</a>
+          <a href="catalogue.html">Catalogue</a>
+          <a href="contact.html">Contact</a>
 
-</head>
-<body>
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="HB Location" class="logo-icon">
-                <span class="logo-text">HB Location</span>
-            </a>
-            <nav>
-                <ul>
-                    <li class="active"><a href="index.html">Accueil</a></li>
-                    <li><a href="catalogue.html">Catalogue</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+          <a href="conditions-location.html">Conditions</a>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <!-- Section Hero -->
-        <section class="hero">
-            <div class="container">
-                <h1>Louez votre véhicule en Algérie</h1>
-                <p>Découvrez nos tarifs compétitifs et notre service premium</p>
-                <a href="catalogue.html" class="hero-btn">Voir nos véhicules</a>
+      <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-grid">
+          <div class="hero-content reveal">
+            <p class="eyebrow">AZUL Location</p>
+            <h1>Location de voiture en Algérie</h1>
+            <p class="hero-subtitle">
+              Des véhicules propres et fiables pour vos trajets quotidiens,
+              vacances et déplacements professionnels, avec une réservation
+              rapide.
+            </p>
+            <div class="hero-actions">
+              <a href="catalogue.html" class="btn btn-primary"
+                >Voir nos véhicules</a
+              >
+              <a href="#reservation" class="btn btn-light"
+                >Réserver maintenant</a
+              >
             </div>
-        </section>
-
-        <!-- Section Réservation -->
-        <section class="reservation-form">
-            <div class="form-container">
-                <h2>Réservez dès maintenant</h2>
-                <form id="reservationForm" action="https://formsubmit.co/hb.location.auto@gmail.com" method="POST">
-                    <!-- Configuration FormSubmit -->
-                    <input type="hidden" name="_subject" value="Nouvelle réservation HB Location">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://wa.me/213550400665?text=Je%20confirme%20ma%20r%C3%A9servation%20HB%20Location">
-
-                    <!-- Première ligne -->
-                    <div class="form-line">
-                        <div class="input-group">
-                            <label for="nom">Nom*</label>
-                            <input type="text" id="nom" name="nom" required>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="prenom">Prénom*</label>
-                            <input type="text" id="prenom" name="prenom" required>
-                        </div>
-                    </div>
-
-                    <!-- Deuxième ligne -->
-                    <div class="form-line">
-                        <div class="input-group">
-                            <label for="lieu-retrait">Point de retrait*</label>
-                            <select id="lieu-retrait" name="lieu_retrait" required>
-                                <option value="">Choisissez...</option>
-                                <option value="aeroport-alger">Aéroport d'Alger</option>
-                                <option value="aeroport-bejaia">Aéroport de Béjaïa</option>
-                                <option value="agence">Agence HB Location</option>
-                                <option value="domicile">Livraison à domicile</option>
-                            </select>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="vehicule">Véhicule*</label>
-                            <select id="vehicule" name="vehicule" required>
-                                <option value="">Choisissez un véhicule...</option>
-                                <option value="Dacia Sandero (ess)- 4500 DA/jour">Dacia Sandero (ess)- 4500 DA/jour</option>
-                                <option value="Dacia Sandero (dies)- 5500 DA/jour">Dacia Sandero (dies)- 5500 DA/jour</option>
-                                <option value="Renault Symbol - 5500 DA/jour">Renault Symbol - 5500 DA/jour</option>
-                                <option value="Renault Clio 4 - 6500 DA/jour">Renault Clio 4 - 6500 DA/jour</option>
-                                <option value="Skoda Fabia - 6500 DA/jour">Skoda Fabia - 6500 DA/jour</option>
-                                <option value="Renault Clio 5 - 7000 DA/jour">Renault Clio 5 - 7000 DA/jour</option>
-                                <option value="Seat Arona - 8000 DA/jour">Seat Arona - 8000 DA/jour</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Troisième ligne (Dates) -->
-                    <div class="form-line">
-                        <div class="input-group">
-                            <label for="date-debut">Date de début*</label>
-                            <input type="date" id="date-debut" name="date_debut" required>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="date-fin">Date de fin*</label>
-                            <input type="date" id="date-fin" name="date_fin" required>
-                        </div>
-                    </div>
-
-                    <!-- Quatrième ligne (Téléphone) -->
-                    <div class="form-line">
-                        <div class="input-group">
-                            <label for="indicatif">Indicatif*</label>
-                            <select id="indicatif" name="indicatif" required>
-                                <option value="+213">Algérie (+213)</option>
-                                <option value="+33">France (+33)</option>
-                            </select>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="telephone">Téléphone*</label>
-                            <input type="tel" id="telephone" name="telephone" required>
-                        </div>
-                    </div>
-
-                    <!-- Cinquième ligne (Email) -->
-                    <div class="form-line">
-                        <div class="input-group full-width">
-                            <label for="email">Email (facultatif)</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                    </div>
-
-                    <div id="price-display" class="price-display"></div>
-
-                    <button type="submit" class="submit-btn">Confirmer la réservation</button>
-                </form>
+          </div>
+          <div
+            class="hero-showcase reveal"
+            aria-label="Véhicule disponible chez AZUL Location"
+          >
+            <span class="showcase-kicker">Disponible selon planning</span>
+            <img
+              src="images/ARONA-FR-1-sans-fond.png"
+              alt="SEAT Arona FR disponible à la location"
+              class="hero-car-main"
+              width="1024"
+              height="576"
+              decoding="async"
+            />
+            <div class="showcase-panel">
+              <strong class="showcase-price"
+                >À partir de 8 000 DA / jour</strong
+              >
+              <span class="showcase-label">Seat Arona FR</span>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Section Véhicules populaires -->
-        <section class="featured-vehicles">
-            <div class="container">
-                <h2>Nos véhicules populaires</h2>
-                <div class="vehicles-grid">
-                    <!-- Véhicule 1 -->
-                    <div class="vehicle-card">
-                        <img src="images/sandero.png" alt="Dacia Sandero">
-                        <div class="vehicle-info">
-                            <h3>Dacia Sandero</h3>
-                            <p class="price">À partir de <strong>4500 DA/jour</strong></p>
-                            <a href="catalogue.html#sandero" class="btn">Détails</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Véhicule 2 -->
-                    <div class="vehicle-card">
-                        <img src="images/symbol.png" alt="Renault Symbol">
-                        <div class="vehicle-info">
-                            <h3>Renault Symbol</h3>
-                            <p class="price">À partir de <strong>5500 DA/jour</strong></p>
-                            <a href="catalogue.html#symbol" class="btn">Détails</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Véhicule 3 -->
-                    <div class="vehicle-card">
-                        <img src="images/clio-iv.png" alt="Renault Clio">
-                        <div class="vehicle-info">
-                            <h3>Renault Clio 4</h3>
-                            <p class="price">À partir de <strong>6500 DA/jour</strong></p>
-                            <a href="catalogue.html#clio" class="btn">Détails</a>
-                        </div>
-                    </div>
-                </div>
+      <section class="reservation-section" id="reservation">
+        <div class="container reservation-layout">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Réserver</p>
+            <h2>Demande de réservation</h2>
+            <p>
+              Remplissez les informations ci-dessous. Votre demande sera envoyée
+              par email à l’agence et préparée sur WhatsApp pour validation
+              rapide.
+            </p>
+            <div class="mini-info">
+              <span>✅ Champs obligatoires vérifiés</span>
+              <span>📅 Dates sécurisées</span>
+              <span>📩 Envoi email sécurisé</span>
             </div>
-        </section>
+          </div>
+
+          <form
+            id="reservationForm"
+            class="premium-form reveal"
+            action="https://formsubmit.co/hb.location.auto@gmail.com"
+            method="POST"
+            novalidate
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nouvelle demande de réservation - AZUL Location"
+            />
+            <input type="hidden" name="_template" value="table" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://azul-location.com/merci.html"
+            />
+            <input
+              class="form-honey"
+              type="text"
+              name="_honey"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+            <input
+              type="hidden"
+              id="reservationVehicleName"
+              name="vehicule_nom"
+            />
+            <input
+              type="hidden"
+              id="reservationDuration"
+              name="duree_location"
+            />
+            <input type="hidden" id="reservationTotal" name="prix_estime" />
+            <input
+              type="hidden"
+              id="reservationPhoneFull"
+              name="telephone_complet"
+            />
+            <input
+              type="hidden"
+              id="reservationReadableDates"
+              name="dates_lisibles"
+            />
+            <input
+              type="hidden"
+              id="reservationWhatsAppMessage"
+              name="message_whatsapp_prepare"
+            />
+            <input type="hidden" name="source" value="Formulaire accueil" />
+            <div class="form-grid two">
+              <div class="field">
+                <label for="nom">Nom *</label
+                ><input
+                  id="nom"
+                  name="nom"
+                  type="text"
+                  autocomplete="family-name"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="prenom">Prénom *</label
+                ><input
+                  id="prenom"
+                  name="prenom"
+                  type="text"
+                  autocomplete="given-name"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-grid two">
+              <div class="field">
+                <label for="pointRetrait">Point de retrait *</label
+                ><select id="pointRetrait" name="pointRetrait" required>
+                  <option value="">Sélectionner</option>
+                  <option>Aéroport d’Alger</option>
+                  <option>Aéroport de Béjaïa</option>
+                  <option>Agence AZUL Location</option>
+                  <option>Livraison à domicile</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="vehicule">Véhicule souhaité *</label
+                ><select id="vehicule" name="vehicule" required>
+                  <option value="">Choisir un véhicule</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-grid two">
+              <div class="field">
+                <label for="dateDebut">Date de début *</label
+                ><input id="dateDebut" name="dateDebut" type="date" required />
+              </div>
+              <div class="field">
+                <label for="dateFin">Date de fin *</label
+                ><input id="dateFin" name="dateFin" type="date" required />
+              </div>
+            </div>
+            <div class="form-grid two phone-grid">
+              <div class="field">
+                <label for="indicatif">Indicatif *</label
+                ><select id="indicatif" name="indicatif" required>
+                  <option value="+213">Algérie (+213)</option>
+                  <option value="+33">France (+33)</option>
+                  <option value="+1">International (+1)</option>
+                  <option value="+44">Royaume-Uni (+44)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="telephone">Numéro de téléphone *</label
+                ><input
+                  id="telephone"
+                  name="telephone"
+                  type="tel"
+                  inputmode="tel"
+                  autocomplete="tel"
+                  placeholder="550 400 665"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-grid two">
+              <div class="field">
+                <label for="email">Email facultatif</label
+                ><input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="contact@exemple.com"
+                />
+              </div>
+              <div class="field">
+                <label for="message">Message facultatif</label
+                ><textarea
+                  id="message"
+                  name="message"
+                  rows="3"
+                  placeholder="Précision, heure d’arrivée, adresse de livraison..."
+                ></textarea>
+              </div>
+            </div>
+            <div
+              id="reservationSummary"
+              class="price-summary"
+              aria-live="polite"
+            >
+              Sélectionnez un véhicule et vos dates pour afficher l’estimation.
+            </div>
+            <button class="btn btn-primary btn-full" type="submit">
+              Envoyer par email et WhatsApp
+            </button>
+            <p class="form-note">
+              Votre demande ne confirme pas automatiquement la disponibilité.
+              AZUL Location vous répondra par téléphone, email ou WhatsApp.
+            </p>
+          </form>
+        </div>
+        <div class="container assurance-grid reservation-benefits">
+          <article class="assurance-card reveal">
+            <span>⚡</span>
+            <h3>Réservation rapide</h3>
+            <p>
+              Une demande claire envoyée par email et préparée sur WhatsApp.
+            </p>
+          </article>
+          <article class="assurance-card reveal">
+            <span>📍</span>
+            <h3>Livraison possible</h3>
+            <p>Aéroport, agence ou livraison à domicile selon disponibilité.</p>
+          </article>
+          <article class="assurance-card reveal">
+            <span>💳</span>
+            <h3>Tarifs transparents</h3>
+            <p>Prix par jour affiché et estimation automatique du total.</p>
+          </article>
+          <article class="assurance-card reveal">
+            <span>🤝</span>
+            <h3>Service client disponible</h3>
+            <p>
+              Un accompagnement sérieux avant, pendant et après la location.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="featured-section">
+        <div class="container">
+          <div class="section-heading center reveal">
+            <p class="eyebrow">Catalogue</p>
+            <h2>Véhicules populaires</h2>
+            <p>
+              Une sélection de véhicules adaptés aux trajets quotidiens, voyages
+              et déplacements professionnels.
+            </p>
+          </div>
+          <div class="vehicle-grid compact" id="featuredVehicles"></div>
+          <div class="center reveal">
+            <a href="catalogue.html" class="btn btn-dark"
+              >Voir tout le catalogue</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="areas-section">
+        <div class="container">
+          <div class="section-heading center reveal">
+            <p class="eyebrow">Zones desservies</p>
+            <h2>Location de voiture autour d’Azazga et Tizi Ouzou</h2>
+            <p>
+              AZUL Location accompagne vos déplacements depuis Azazga, Tizi
+              Ouzou, l’aéroport d’Alger et Béjaïa selon disponibilité.
+            </p>
+          </div>
+          <div class="areas-grid">
+            <a class="area-card reveal" href="location-voiture-azazga.html">
+              <strong>Azazga</strong>
+              <span>Agence, retrait rapide et trajets locaux.</span>
+            </a>
+            <a class="area-card reveal" href="location-voiture-tizi-ouzou.html">
+              <strong>Tizi Ouzou</strong>
+              <span
+                >Déplacements familiaux, professionnels et longue durée.</span
+              >
+            </a>
+            <a
+              class="area-card reveal"
+              href="location-voiture-aeroport-alger.html"
+            >
+              <strong>Aéroport d’Alger</strong>
+              <span>Arrivées, retours et coordination par WhatsApp.</span>
+            </a>
+            <a class="area-card reveal" href="location-voiture-bejaia.html">
+              <strong>Béjaïa</strong>
+              <span>Retrait selon disponibilité et demande à confirmer.</span>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="logo-hb-wrapper">
-                        <img src="images/logo.png" alt="Logo HB Location" class="footer-logo">
-                        <span class="footer-logo-text">HB Location</span>
-                    </div>
-                    <p class="footer-description">Votre partenaire de confiance pour la location de véhicules depuis 2018.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Liens utiles</h3>
-                    <ul>
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Réservation</a></li>
-                        <li><a href="catalogue.html"><i class="fas fa-chevron-right"></i> Catalogue</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                        <li><a href="cgu.html"><i class="fas fa-chevron-right"></i> CGU</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Réseaux sociaux</h3>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/share/1E7LZG3Cci/?mibextid=wwXIfr" class="social-btn fb" target="_blank" rel="noopener noreferrer">
-                            <img src="images/facebook-icon.png" alt="Facebook" class="social-icon">
-                        </a>
-                        <a href="https://wa.me/213550400665" class="social-btn wa" target="_blank" rel="noopener noreferrer">
-                            <img src="images/whatsapp-icon.png" alt="WhatsApp" class="social-icon">
-                        </a>
-                        <a href="https://www.instagram.com/hb_location.auto?igsh=MWIxOGt1dHliMGZ5cg==" class="social-btn ig" target="_blank" rel="noopener noreferrer">
-                            <img src="images/instagram-icon.png" alt="Instagram" class="social-icon">
-                        </a>
-                        <a href="https://www.tiktok.com/@hb.location.auto?_t=ZN-8wDhIKKrt8p&_r=1" class="social-btn tt" target="_blank" rel="noopener noreferrer">
-                            <img src="images/tiktok-icon.png" alt="TikTok" class="social-icon">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom" style="text-align: center; padding: 15px 0; border-top: 1px solid #333;">
-                <p style="margin: 0;">&copy; 2025 HB Location. Tous droits réservés.</p>
-            </div>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img
+              src="images/logo.png"
+              alt="Logo AZUL Location"
+              width="48"
+              height="48"
+              loading="lazy"
+              decoding="async"
+            /><strong>AZUL Location</strong>
+          </div>
+          <p>
+            Votre partenaire de confiance pour la location de véhicules en
+            Algérie depuis 2018.
+          </p>
+          <p>Véhicules fiables, service clair et réservation rapide.</p>
         </div>
+        <div>
+          <h3>Liens rapides</h3>
+          <a href="index.html">Accueil</a><a href="catalogue.html">Catalogue</a
+          ><a href="conditions-location.html">Conditions</a
+          ><a href="contact.html">Contact</a><a href="cgu.html">CGU</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>RN 12 Tizi-Bouchène, Azazga</p>
+          <p>+213 (0) 550 400 665</p>
+          <p>hb.location.auto@gmail.com</p>
+        </div>
+        <div>
+          <h3>Réseaux sociaux</h3>
+          <div class="socials">
+            <a
+              class="social-link facebook"
+              href="https://www.facebook.com/share/1E7LZG3Cci/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <img
+                src="images/facebook-icon.png"
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <a
+              class="social-link instagram"
+              href="https://www.instagram.com/azul_location.auto?igsh=MWh5aWV1eG1lbXJkcA%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <img
+                src="images/instagram-icon.png"
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <a
+              class="social-link tiktok"
+              href="https://www.tiktok.com/@azul.location.auto?_r=1&_t=ZN-969xYWPiuCU"
+              target="_blank"
+              rel="noopener"
+              aria-label="TikTok"
+            >
+              <img
+                src="images/tiktok-icon.png"
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <a
+              class="social-link whatsapp"
+              href="https://wa.me/213550400665"
+              target="_blank"
+              rel="noopener"
+              aria-label="WhatsApp"
+            >
+              <img
+                src="images/whatsapp-icon.png"
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 AZUL Location. Tous droits réservés.
+      </div>
     </footer>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</body>
+  </body>
 </html>

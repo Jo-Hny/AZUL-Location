@@ -1,187 +1,329 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HB Location - Contact</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Icône HB Location" class="logo-icon">
-                <span class="logo-text">HB Location</span>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Réservation</a></li>
-                    <li><a href="catalogue.html">Catalogue</a></li>
-                    <li class="active"><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | AZUL Location</title>
+    <meta
+      name="description"
+      content="Contactez AZUL Location : agence à Azazga, téléphone WhatsApp, email, horaires et formulaire de contact rapide."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://azul-location.com/contact.html" />
+    <meta property="og:site_name" content="AZUL Location" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content="Contact | AZUL Location" />
+    <meta
+      property="og:description"
+      content="Contactez AZUL Location : agence à Azazga, téléphone WhatsApp, email, horaires et formulaire de contact rapide."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://azul-location.com/contact.html" />
+    <meta
+      property="og:image"
+      content="https://azul-location.com/images/logo.png"
+    />
+    <meta property="og:image:alt" content="Contact AZUL Location" />
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body data-page="contact">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Accueil AZUL Location"
+          ><img
+            src="images/logo.png"
+            alt="Logo AZUL Location"
+            class="brand-logo"
+            width="50"
+            height="50"
+            decoding="async"
+          /><span class="brand-name">AZUL Location</span></a
+        ><button
+          class="menu-toggle"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="mainNav"
+        >
+          ?
+        </button>
+        <nav id="mainNav" class="main-nav" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a><a href="catalogue.html">Catalogue</a
+          ><a href="contact.html" class="active" aria-current="page">Contact</a
+          ><a href="conditions-location.html">Conditions</a>
+        </nav>
+      </div>
     </header>
 
-    <!-- Contenu principal -->
     <main>
-        <!-- En-tête de page -->
-        <section class="page-header">
-            <div class="container">
-                <h1>Contactez HB Location</h1>
-                <p>Une question ? Un devis ? Nous vous répondons sous 24h</p>
-            </div>
-        </section>
+      <section class="page-hero dark">
+        <div class="container reveal">
+          <p class="eyebrow">Contact</p>
+          <h1>Contactez AZUL Location</h1>
+          <p>
+            Une question, une demande spéciale ou une réservation ? Nous sommes
+            disponibles pour vous répondre rapidement.
+          </p>
+        </div>
+      </section>
 
-        <!-- Section contact -->
-        <section class="contact-section">
-            <div class="container">
-                <div class="contact-grid">
-                    <!-- Coordonnées -->
-                    <div class="contact-info">
-                        <h2><i class="fas fa-map-marker-alt"></i> Nos agences</h2>
-                        <div class="info-block">
-                            <h3>Agence Algérie</h3>
-                            <p>Rn 12 Tizi-bouchène, 15001 Azazga</p>
-                            <p><i class="fas fa-phone"></i> 05 50 40 06 65</p>
-                        </div>
-                        
-                        <div class="info-block">
-                            <h3>Agence France</h3>
-                            <p>56 rue Croix Saint-Marc, 51100 Reims</p>
-                            <p><i class="fas fa-phone"></i> 07 52 04 86 62</p>
-                        </div>
-                        
-                        <div class="info-block">
-                            <h3>Email</h3>
-                            <p><i class="fas fa-envelope"></i> hb.location.auto@gmail.com</p>
-                        </div>
-                        
-                        <div class="info-block">
-                            <h3>Horaires</h3>
-                            <p><i class="fas fa-clock"></i> Samedi-Jeudi : 8h-18h<br>
-                            <i class="fas fa-clock"></i> Vendredi : 9h-15h</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Formulaire -->
-                    <div class="contact-form">
-                        <h2><i class="fas fa-paper-plane"></i> Message rapide</h2>
-                        <form id="contactForm" action="https://formsubmit.co/hb.location.auto@gmail.com" method="POST">
-                            <!-- Anti-spam honeypot (invisible) -->
-                            <input type="text" name="_honey" style="display:none">
-
-                            <div class="form-group">
-                                <label for="nom">Nom</label>
-                                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">email</label>
-                                <input type="email" id="email" name="email" placeholder="Votre email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">phone</label>
-                                <input type="tel" id="phone" name="telephone" placeholder="Votre téléphone">
-                            </div>
-                            <div class="form-group">
-                                <label for="sujet">Sujet</label>
-                                <select id="sujet" name="sujet" required>
-                                    <option value="">Sujet de votre message</option>
-                                    <option value="reservation">Réservation</option>
-                                    <option value="question">Question</option>
-                                    <option value="problem">Problème technique</option>
-                                    <option value="other">Autre</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">message</label>
-                                <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
-                            </div>
-                            <div class="form-group btn-envoyer-container">
-                                <button type="submit" class="btn-envoyer">
-                                    <i class="fas fa-paper-plane"></i> Envoyer le message
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+      <section class="contact-page-section">
+        <div class="container contact-layout">
+          <aside class="contact-card reveal">
+            <h2>Coordonnées</h2>
+            <div class="contact-item">
+              <span>📍</span>
+              <div>
+                <strong>Adresse Algérie</strong>
+                <p>RN 12 Tizi-Bouchène, Azazga</p>
+              </div>
             </div>
-        </section>
-
-        <!-- Carte -->
-        <section class="map-section">
-            <div class="container">
-                <h2><i class="fas fa-map-marked-alt"></i> Nous trouver</h2>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1552.985553881113!2d4.344584508073828!3d36.746979463598485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128da71d540cb581%3A0x417a0c0cc52db039!2sLOCATION%20DE%20VOITURE%20BOUDEDJA!5e0!3m2!1sfr!2sfr!4v1746818226872!5m2!1sfr!2sfr" 
-                    referrerpolicy="no-referrer-when-downgrade"       
-                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+            <div class="contact-item">
+              <span>📞</span>
+              <div>
+                <strong>Téléphone / WhatsApp</strong>
+                <p>+213 (0) 550 400 665</p>
+              </div>
             </div>
-        </section>
+            <div class="contact-item">
+              <span>📩</span>
+              <div>
+                <strong>Email</strong>
+                <p>hb.location.auto@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span>🕘</span>
+              <div>
+                <strong>Horaires</strong>
+                <p>
+                  Samedi - Jeudi : 08h00 - 18h00<br />Vendredi : 09h00 - 15h00
+                </p>
+              </div>
+            </div>
+            <div class="quick-actions">
+              <a class="btn btn-primary" href="tel:+213550400665">Appeler</a
+              ><a
+                class="btn btn-dark"
+                href="https://wa.me/213550400665"
+                target="_blank"
+                rel="noopener"
+                >WhatsApp</a
+              ><a
+                class="btn btn-light alt"
+                href="mailto:hb.location.auto@gmail.com"
+                >Email</a
+              >
+            </div>
+          </aside>
+
+          <form
+            id="contactForm"
+            class="premium-form reveal"
+            action="https://formsubmit.co/hb.location.auto@gmail.com"
+            method="POST"
+            novalidate
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nouveau message depuis le site - AZUL Location"
+            />
+            <input type="hidden" name="_template" value="table" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://azul-location.com/merci.html"
+            />
+            <input
+              class="form-honey"
+              type="text"
+              name="_honey"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+            <input type="hidden" name="source" value="Formulaire contact" />
+            <h2>Message rapide</h2>
+            <div class="field">
+              <label for="contactNom">Nom *</label
+              ><input id="contactNom" name="contactNom" type="text" required />
+            </div>
+            <div class="form-grid two">
+              <div class="field">
+                <label for="contactEmail">Email *</label
+                ><input id="contactEmail" name="email" type="email" required />
+              </div>
+              <div class="field">
+                <label for="contactPhone">Téléphone</label
+                ><input id="contactPhone" name="contactPhone" type="tel" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="contactSujet">Sujet *</label
+              ><select id="contactSujet" name="contactSujet" required>
+                <option value="">Sélectionner</option>
+                <option>Réservation</option>
+                <option>Demande de tarif</option>
+                <option>Question sur les conditions</option>
+                <option>Livraison / retrait</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="contactMessage">Message *</label
+              ><textarea
+                id="contactMessage"
+                name="contactMessage"
+                rows="6"
+                required
+              ></textarea>
+            </div>
+            <div class="form-actions split">
+              <button type="submit" class="btn btn-primary">
+                Envoyer email + WhatsApp</button
+              ><button
+                type="button"
+                id="contactWhatsAppButton"
+                class="btn btn-dark"
+              >
+                WhatsApp
+              </button>
+            </div>
+            <p class="form-note">
+              Le bouton principal envoie le message par email et prépare aussi
+              WhatsApp.
+            </p>
+          </form>
+        </div>
+
+        <div class="container map-section reveal">
+          <div class="section-heading center">
+            <p class="eyebrow">Adresse</p>
+            <h2>Nous trouver</h2>
+          </div>
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.2855084762623!2d4.34235945395551!3d36.74698857867691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128da71d540cb581%3A0x417a0c0cc52db039!2sLOCATION%20DE%20VOITURE%20BOUDEDJA!5e1!3m2!1sfr!2sfr!4v1778078402200!5m2!1sfr!2sfr"
+              width="600"
+              height="450"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Carte Google Maps AZUL Location"
+            ></iframe>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-               <div class="footer-section">
-                    <!-- Logo + HB Location à côté -->
-                <div class="logo-hb-wrapper">
-                        <img src="images/logo.png" alt="Logo HB Location" class="footer-logo">
-                        <span class="footer-logo-text">HB Location</span>
-                    </div>
-                    
-                    <!-- Texte en dessous, normal -->
-                    <p class="footer-description">Votre partenaire de confiance pour la location de véhicules depuis 2018.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Liens utiles</h3>
-                    <ul>
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Réservation</a></li>
-                        <li><a href="catalogue.html"><i class="fas fa-chevron-right"></i> Catalogue</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                        <li><a href="cgu.html"><i class="fas fa-chevron-right"></i> CGU</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Réseaux sociaux</h3>
-                    <div class="social-links">
-                    <!-- Facebook avec logo visible -->
-                    <a href="https://www.facebook.com/share/1E7LZG3Cci/?mibextid=wwXIfr" class="social-btn fb" target="_blank" rel="noopener noreferrer">
-                        <img src="images/facebook-icon.png" alt="Facebook" class="social-icon">
-                    </a>
-                    
-                    <!-- WhatsApp avec logo visible -->
-                    <a href="https://wa.me/213550400665" class="social-btn wa" target="_blank" rel="noopener noreferrer">
-                        <img src="images/whatsapp-icon.png" alt="WhatsApp" class="social-icon">
-                    </a>
-                    
-                    <!-- Instagram avec logo visible -->
-                    <a href="https://www.instagram.com/hb_location.auto?igsh=MWIxOGt1dHliMGZ5cg==" class="social-btn ig" target="_blank" rel="noopener noreferrer">
-                        <img src="images/instagram-icon.png" alt="Instagram" class="social-icon">
-                    </a>
-                    
-                    <!-- TikTok avec logo visible -->
-                    <a href="https://www.tiktok.com/@hb.location.auto?_t=ZN-8wDhIKKrt8p&_r=1" class="social-btn tt" target="_blank" rel="noopener noreferrer">
-                        <img src="images/tiktok-icon.png" alt="TikTok" class="social-icon">
-                    </a>
-                </div>
-                </div>
-            </div>
-            <div class="footer-bottom" style="text-align: center; padding: 15px 0; border-top: 1px solid #333;">
-                <p style="margin: 0;">&copy; 2025 HB Location. Tous droits réservés.</p>
-            </div>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img
+              src="images/logo.png"
+              alt="Logo AZUL Location"
+              width="48"
+              height="48"
+              loading="lazy"
+              decoding="async"
+            /><strong>AZUL Location</strong>
+          </div>
+          <p>
+            Votre partenaire de confiance pour la location de véhicules en
+            Algérie depuis 2018.
+          </p>
+          <p>Véhicules fiables, service clair et réservation rapide.</p>
         </div>
+        <div>
+          <h3>Liens rapides</h3>
+          <a href="index.html">Accueil</a><a href="catalogue.html">Catalogue</a
+          ><a href="conditions-location.html">Conditions</a
+          ><a href="contact.html">Contact</a><a href="cgu.html">CGU</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>RN 12 Tizi-Bouchène, Azazga</p>
+          <p>+213 (0) 550 400 665</p>
+          <p>hb.location.auto@gmail.com</p>
+        </div>
+        <div>
+          <h3>Réseaux sociaux</h3>
+          <div class="socials">
+            <a
+              class="social-link facebook"
+              href="https://www.facebook.com/share/1E7LZG3Cci/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <img
+                src="images/facebook-icon.png"
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <a
+              class="social-link instagram"
+              href="https://www.instagram.com/azul_location.auto?igsh=MWh5aWV1eG1lbXJkcA%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <img
+                src="images/instagram-icon.png"
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <a
+              class="social-link tiktok"
+              href="https://www.tiktok.com/@azul.location.auto?_r=1&_t=ZN-969xYWPiuCU"
+              target="_blank"
+              rel="noopener"
+              aria-label="TikTok"
+            >
+              <img
+                src="images/tiktok-icon.png"
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <a
+              class="social-link whatsapp"
+              href="https://wa.me/213550400665"
+              target="_blank"
+              rel="noopener"
+              aria-label="WhatsApp"
+            >
+              <img
+                src="images/whatsapp-icon.png"
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 AZUL Location. Tous droits réservés.
+      </div>
     </footer>
-
-    <!-- Font Awesome pour les icônes -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
